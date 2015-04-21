@@ -1,0 +1,1 @@
+This repostiory holds the workings for a complete, working Flask Blog constructed using the Real Python methodology. This blog will be the focus for further web dev optimization, customization, and novel applications. Stay tuned!
