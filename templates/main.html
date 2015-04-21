@@ -1,5 +1,30 @@
 {% extends "template.html" %}
 {% block content %}
-  <h2>Welcome to the Sports Stats Flask Blog!</h2>
+  <h2>Welcome to the Flask Sports Stats Interactive Database!</h2>
   <p><a href="/logout">Logout</a></p>
+    <h3>Add a new entry:</h3>
+    <form action="{{ url_for('add') }}" method="post" class="add">
+      <label><strong>Season:</strong></label>
+      <input name="season" type="text">
+      <label><strong>Player:</strong></label>
+      <input name="player" type="text">
+      <label><strong>Club:</strong></label>
+      <input name="club" type="text">
+      <label><strong>Competition:</strong></label>
+      <input name="competition" type="text">
+      <label><strong>Goals:</strong></label>
+      <input name="goals" type="integer">
+      <input class="button" type="submit" value="Save">
+    </form> 
+  <br/>
+  <br/>
+  <h3>Soccer Stats:</h3>
+  {% for p in posts %}
+    <strong>Season:</strong> {{ p.season }} <br/>
+    <strong>Player:</strong> {{ p.player }} <br/>
+    <strong>Club:</strong> {{ p.club }} <br/>
+    <strong>Competition:</strong> {{ p.competition }} <br/>
+    <strong>Goals:</strong> {{ p.goals }} <br/>
+    <br/>
+  {% endfor %}
 {% endblock %}
